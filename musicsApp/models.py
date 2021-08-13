@@ -5,9 +5,9 @@ from django.db.models.enums import Choices
 
 
 class Artist(models.Model):
-    artists_name = models.CharField(max_length=200 ,default=0)
-    artists_age=models.IntegerField(max_length=200 , default=0  )
-    artists_nationality=models.CharField(max_length=200,default='spain')
+    artist_name = models.CharField(max_length=200 ,default=0)
+    artist_age=models.IntegerField(max_length=200 , default=0)
+    artist_nationality=models.CharField(max_length=200,default='spain')
     pub_date = models.DateTimeField('date published')
 
     def __str__(self):
