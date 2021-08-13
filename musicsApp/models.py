@@ -6,12 +6,12 @@ from django.db.models.enums import Choices
 
 class Artist(models.Model):
     artist_name = models.CharField(max_length=200 ,default=0)
-    artist_age=models.IntegerField(max_length=200 , default=0)
+    artist_age=models.IntegerField(max_length=200 , default=0  )
     artist_nationality=models.CharField(max_length=200,default='spain')
     pub_date = models.DateTimeField('date published')
 
     def __str__(self):
-        return self.artists_name
+        return self.artist_name
 
 class Album(models.Model):
     artist_id = models.ForeignKey(Artist, on_delete=models.CASCADE)
