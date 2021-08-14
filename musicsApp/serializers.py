@@ -20,4 +20,4 @@ class SongSerializer(serializers.ModelSerializer):
     class Meta:
         fields = ('__all__')
         model = Song
-        # depth = 2
+        depth = 1

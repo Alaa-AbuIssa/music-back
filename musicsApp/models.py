@@ -4,6 +4,7 @@ from django.db.models.enums import Choices
 
 
 # Create your models here.
+
 class Artist(models.Model):
     artist_name = models.CharField(max_length=200 )
     artist_image_URL=models.CharField(max_length=1000 ,default="please enter the image URL here")
