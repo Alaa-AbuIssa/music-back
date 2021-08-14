@@ -14,9 +14,10 @@ class AlbumSerializer(serializers.ModelSerializer):
     class Meta:
         fields = ('__all__')
         model = Album
-
+        # depth = 1
 
 class SongSerializer(serializers.ModelSerializer):
     class Meta:
         fields = ('__all__')
         model = Song
+        # depth = 2
