@@ -1,8 +1,42 @@
 from django.contrib import admin
+from . import models
 
-from . models import Artist, Album, Song
-# Register your models here.
 
-admin.site.register(Artist)
-admin.site.register(Album)
-admin.site.register(Song)
+@admin.register(models.Artist)
+
+class ArtistAdmin(admin.ModelAdmin):
+	list_display = [
+        'artist_name',
+        ]
+
+
+
+@admin.register(models.Album)
+
+class AlbumAdmin(admin.ModelAdmin):
+	list_display = [
+        'id', 
+        'album_name',
+    ]
+
+
+
+class SongInlineModel(admin.TabularInline):
+    model = models.Song
+    fields = [
+        'song_name', 
+        'type'
+        ]
+
+
+@admin.register(models.Song)
+
+class SongAdmin(admin.ModelAdmin):
+    list_display = [
+        'song_name', 
+        'album',
+        'type'
+        ]
+
+
+

@@ -1,13 +1,9 @@
 from django.urls import path
+from graphene_django.views import GraphQLView
+from musicsApp.schema import schema
 
-from .views import AlbumDetail, ArtistList,SongDetail,ArtistDetail,AlbumList,SongList
 
-urlpatterns = [
-    path('artist/', ArtistList.as_view(), name='artist_list'),
-    path("artist/<int:pk>/", ArtistDetail.as_view(), name='artist_details'),
-    path('album/', AlbumList.as_view(), name='artist_list'),
-    path("album/<int:pk>/", AlbumDetail.as_view(), name='album_details'),
-    path('song/', SongList.as_view(), name='artist_list'),
-    path("song/<int:pk>/", SongDetail.as_view(), name='song_details'),
-
+urlpatterns =[
+    path("graphql",GraphQLView.as_view(graphiql=True, schema=schema)),
 ]
+
